@@ -19,10 +19,8 @@
   //--homepage--
   //creates a route by calling the get method on $app object
     $app->post("/", function use ($app){
-      //constructs contact data by instantiation
-        $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip'])
-      //tells $app to use twig to render contacts page
-        return $app['twig']->render('contacts.html.twig');
+      //tells $app to use twig to render contacts page and passes through the class Contacts as contact for Twig to use
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
     });
 
     return $app;
@@ -37,3 +35,7 @@ private $street;
 private $city;
 private $state;
 private $zip;
+
+//constructs contact data by instantiation
+  $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip'])
+//tells $app to use twig to render contacts page
