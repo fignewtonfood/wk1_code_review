@@ -14,4 +14,10 @@
   //instantiates the Silex and Twig application objects
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigService\Provider(), array('twig.path' => __DIR__.'/../views'));
+
+  //routes
+  //--homepage--
+    $app->get("/", function use ($app){
+        return $app['twig']->render('addresses.html.twig');
+    });
 ?>

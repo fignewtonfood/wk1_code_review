@@ -1,6 +1,6 @@
 <?php
-  //establish Address class
-    class Address
+  //establish Contact class
+    class Contact
     {
       //setting properties to private
         private $name;
@@ -10,7 +10,7 @@
         private $state;
         private $zip;
 
-      //constructor for Car class
+      //constructor for Contact class
         function __construct()
         {
             $this->name = $name;
@@ -21,7 +21,7 @@
             $this->zip = $zip;
         }
 
-      //getters for Car properties
+      //getters for Contact properties
         function getName()
         {
             return $this->name;
@@ -52,7 +52,7 @@
             return $this->zip;
         }
 
-      //setters for Car properties
+      //setters for Contact properties
         function setName($new_name)
         {
             if (is_string($new_name)){
@@ -94,6 +94,6 @@
             }
         }
 
-        
+
     }
 ?>
