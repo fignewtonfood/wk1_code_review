@@ -20,5 +20,11 @@
         $this->state = $state;
         $this->zip = $zip;
     }
+
+  //getters for Car properties
+    function getName()
+    {
+        return $this->name;
+    }
     }
 ?>
