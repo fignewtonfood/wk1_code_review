@@ -6,7 +6,7 @@
 
 ## Description
 
-Using PHP and Silex, this app stores contact information input by user to a cookie and then displays the list of information on the home page. This app uses a Twig framework to display any CSS or HTML.
+Using PHP and Silex, this app stores contact information input by user to a cookie and then displays the list of information on the home page. This app uses a Twig framework to display any HTML.
 
 ## Setup
 
