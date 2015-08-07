@@ -1,45 +1,45 @@
 <html>
-<head>
-    <title>Address Book</title>
-</head>
-<body>
-    <h1>Address Book</h1>
-  <!-- returns address book only if there are contacts to print -->
-    {% if contacts is not empty %}
-        <p>Here are your contacts</p>
-        </br>
-      <!-- for each contact in the contacts class, run get methods to return values -->
-        {% for contact in contacts %}
-            <h3>{{ contact.getName }}</h3>
-            <h4>{{ contact.getPhone }}</h4>
-            <p>{{ contact.getStreet }}</p>
-            <p>{{ contact.getCity }}, {{ contact.getState }}  {{contact.getZip}}</p>
+    <head>
+        <title>Address Book</title>
+    </head>
+    <body>
+        <h1>Address Book</h1>
+      <!-- returns address book only if there are contacts to print -->
+        {% if contacts is not empty %}
+            <p>Here are your contacts</p>
             </br>
-            </br>
-        {% endfor %}
-    {% endif %}
+          <!-- for each contact in the contacts class, run get methods to return values -->
+            {% for contact in contacts %}
+                <h3>{{ contact.getName }}</h3>
+                <h4>{{ contact.getPhone }}</h4>
+                <p>{{ contact.getStreet }}</p>
+                <p>{{ contact.getCity }}, {{ contact.getState }}  {{contact.getZip}}</p>
+                </br>
+                </br>
+            {% endfor %}
+        {% endif %}
 
-  <!-- form for posting to session -->
-    <form actions='/contacts' method='post'>
-        <label for='name'>Name:</label>
-        <input id='name' name='name' type='text'>
+      <!-- form for posting to session -->
+        <form actions='/contacts' method='post'>
+            <label for='name'>Name:</label>
+            <input id='name' name='name' type='text'>
 
-        <label for='phone'>Phone:</label>
-        <input id='phone' name='phone' type='text'>
+            <label for='phone'>Phone:</label>
+            <input id='phone' name='phone' type='text'>
 
-        <label for='street'>Street Address:</label>
-        <input id='street' name='street' type='text'>
+            <label for='street'>Street Address:</label>
+            <input id='street' name='street' type='text'>
 
-        <label for='city'>City:</label>
-        <input id='city' name='city' type='text'>
+            <label for='city'>City:</label>
+            <input id='city' name='city' type='text'>
 
-        <label for='state'>State:</label>
-        <input id='state' name='state' type='text'>
+            <label for='state'>State:</label>
+            <input id='state' name='state' type='text'>
 
-        <label for='zip'>ZIP Code:</label>
-        <input id='zip' name='zip' type='number'>
+            <label for='zip'>ZIP Code:</label>
+            <input id='zip' name='zip' type='number'>
 
-        <button type='submt'>Submit</button>
-    </form>
-</body>
+            <button type='submt'>Submit</button>
+        </form>
+    </body>
 </html>

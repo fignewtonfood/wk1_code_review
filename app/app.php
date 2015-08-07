@@ -28,7 +28,6 @@
     $app->post("/contacts", function() use ($app){
       //constructs contact data by instantiation
         $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip'])
-
       //pushes instantiated contact to session array
         $contact->save();
       //tells $app to use twig to render contacts page and passes through the instantiated array variable as newcontact for Twig to use
