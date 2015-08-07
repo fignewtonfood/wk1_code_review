@@ -32,7 +32,7 @@
       //pushes instantiated contact to session array
         $contact->save();
       //tells $app to use twig to render contacts page and passes through the instantiated array variable as newcontact for Twig to use
-        return $app['twig']->render('contact_created.html.twig', array('newcontact' => $contact));
+        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact));
     });
 
   //--delete all--
@@ -41,8 +41,8 @@
       //calls static method delete all and writes contact object to blank array
         Contact::deleteAll();
       //tells $app to use twig to render contacts deleted page
-        return $app['twig']->render('contacts_deleted.html.twig');
-    })
+        return $app['twig']->render('delete_contacts.html.twig');
+    });
 
     return $app;
 ?>
