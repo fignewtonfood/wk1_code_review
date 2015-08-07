@@ -15,12 +15,24 @@
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigService\Provider(), array('twig.path' => __DIR__.'/../views'));
 
-  //routes
+  //----routes----
   //--homepage--
-  //creates a route by calling the get method on $app object
+  //creates a route to homepage by calling the get method on $app object
     $app->post("/", function use ($app){
       //tells $app to use twig to render contacts page and passes through the class Contacts as contact for Twig to use
         return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
+    });
+
+  //--contact created--
+  //creates a route to contacts page by calling the get method on $app object
+    $app->post("/contacts", function() use ($app){
+      //constructs contact data by instantiation
+        $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip'])
+
+      //pushes instantiated contact to session array
+        $contact->save();
+      //tells $app to use twig to render contacts page and passes through the instantiated array variable as newcontact for Twig to use
+        return $app['twig']->render('contact_created.html.twig', array('newcontact' => $contact));
     });
 
     return $app;
@@ -36,6 +48,5 @@ private $city;
 private $state;
 private $zip;
 
-//constructs contact data by instantiation
-  $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip'])
+
 //tells $app to use twig to render contacts page
