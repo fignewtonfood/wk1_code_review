@@ -94,10 +94,16 @@
             }
         }
 
-      //creates a save function for user input cars
+      //save function for user input contacts
         function save()
         {
             array_push($_SESSION['list_of_contacts'], $this);
+        }
+
+      //for returning all Contacts in the global session variable
+        static function getAll()
+        {
+            return $_SESSION['list_of_contacts'], $this);
         }
     }
 ?>
