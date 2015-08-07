@@ -103,7 +103,7 @@
       //for returning all Contacts in the global session variable
         static function getAll()
         {
-            return $_SESSION['list_of_contacts'], $this);
+            return $_SESSION['list_of_contacts'];
         }
     }
 ?>
