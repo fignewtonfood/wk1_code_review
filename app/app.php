@@ -35,5 +35,14 @@
         return $app['twig']->render('contact_created.html.twig', array('newcontact' => $contact));
     });
 
+  //--delete all--
+  //creates a route to delete contacts page by calling the get method on $app object
+    $app->post('/delete_contacts', function() use ($app){
+      //calls static method delete all and writes contact object to blank array
+        Contact::deleteAll();
+      //tells $app to use twig to render contacts deleted page
+        return $app['twig']->render('contacts_deleted.html.twig');
+    })
+
     return $app;
 ?>

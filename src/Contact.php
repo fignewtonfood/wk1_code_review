@@ -106,6 +106,7 @@
             return $_SESSION['list_of_contacts'];
         }
 
+      //writes session to a blank array clearing all contacts
         static function deleteAll()
         {
             $_SESSION['list_of_contacts'] = array();
