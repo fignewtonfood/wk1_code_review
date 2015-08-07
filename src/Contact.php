@@ -94,6 +94,10 @@
             }
         }
 
-
+      //creates a save function for user input cars
+        function save()
+        {
+            array_push($_SESSION['list_of_contacts'], $this);
+        }
     }
 ?>
