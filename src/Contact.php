@@ -11,7 +11,7 @@
         private $zip;
 
       //constructor for Contact class
-        function __construct()
+        function __construct($name, $phone, $street, $city, $state, $zip)
         {
             $this->name = $name;
             $this->phone = $phone;

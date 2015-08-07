@@ -13,6 +13,7 @@
 
   //instantiates the Silex and Twig application objects
     $app = new Silex\Application();
+    $app['debug'] = true;
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
   //----routes----
@@ -36,16 +37,3 @@
 
     return $app;
 ?>
-
-
-
-
-private $name;
-private $phone;
-private $street;
-private $city;
-private $state;
-private $zip;
-
-
-//tells $app to use twig to render contacts page
